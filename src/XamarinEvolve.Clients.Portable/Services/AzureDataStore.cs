@@ -73,15 +73,5 @@ namespace XamarinEvolve.Portable.Services
         }
 
         #endregion
-
-        /*public async Task<IEnumerable<Monkey>> GetMonkeysAsync()
-        {
-            if (!initialized)
-                await InitializeStore();
-
-            await monkeyTable.PullAsync("allMonkeys", monkeyTable.CreateQuery());
-
-            return await monkeyTable.OrderBy(x=>x.Name).ToEnumerableAsync();
-        }*/
     }
 }

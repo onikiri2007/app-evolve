@@ -89,12 +89,6 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <ProjectReference Include="..\XamarinEvolve.Android\XamarinEvolve.Android.csproj">
-      <Project>{C4B4592F-6AC4-4FE6-B63E-5D2DE47FD340}</Project>
-      <Name>XamarinEvolve.Android</Name>
-      <ReferenceOutputAssembly>False</ReferenceOutputAssembly>
-      <Private>False</Private>
-    </ProjectReference>
     <ProjectReference Include="..\XamarinEvolve.iOS\XamarinEvolve.iOS.csproj">
       <Project>{22F77CDE-8816-45D7-A7A1-CA9282145F0A}</Project>
       <Name>XamarinEvolve.iOS</Name>

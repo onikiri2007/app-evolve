@@ -25,11 +25,7 @@ namespace XamarinEvolve.Clients.UI
                 case TargetPlatform.iOS:
                     MainPage = new EvolveNavigationPage(new RootPageiOS());
                     break;
-                case TargetPlatform.Windows:
-                case TargetPlatform.WinPhone:
-                    MainPage = new RootPageWindows();
-                    break;
-                default:
+               default:
                     throw new NotImplementedException();
             }
         }
@@ -200,7 +196,7 @@ namespace XamarinEvolve.Clients.UI
         protected async void ConnectivityChanged (object sender, ConnectivityChangedEventArgs e)
         {
             //save current state and then set it
-            var connected = Settings.Current.IsConnected;
+            var connected = Plugin.Settings.CrossSettings.Current.IsConnected;
             Settings.Current.IsConnected = e.IsConnected;
             if (connected && !e.IsConnected)
             {
