@@ -99,7 +99,7 @@ namespace XamarinEvolve.Clients.Portable
             Logger.Track(EvolveLoggerKeys.LaunchedBrowser, "Url", arg);
 
             var lower = arg.ToLowerInvariant();
-            if(Device.OS == TargetPlatform.iOS && lower.Contains("twitter.com"))
+            if(Device.RuntimePlatform == Device.iOS && lower.Contains("twitter.com"))
             {
                 try
                 {
@@ -133,7 +133,7 @@ namespace XamarinEvolve.Clients.Portable
                         G = 53,
                         B = 235
                     },
-                    UseSafairReaderMode = true,
+                    UseSafariReaderMode = true,
                     UseSafariWebViewController = true
                 });
             } 

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using MvvmHelpers;
 using XamarinEvolve.DataObjects;
 using NodaTime;
@@ -25,7 +26,7 @@ namespace XamarinEvolve.Clients.Portable
                 IsLinkActive = true
             };
 
-            if (Device.OS == TargetPlatform.iOS)
+            if (Device.RuntimePlatform == Device.iOS)
                 entry.Thumbnail = ImageSource.FromFile("Icon.png");
 
             entry.KeyValues.Add("contentType", "Session");

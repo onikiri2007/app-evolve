@@ -47,7 +47,10 @@ namespace XamarinEvolve.Clients.Portable
             set 
             {
                 if (SetProperty(ref filter, value))
-                    ExecuteFilterSessionsAsync();
+                   Device.BeginInvokeOnMainThread(async () =>
+                   {
+                       await ExecuteFilterSessionsAsync();
+                   });
                     
             }
         }

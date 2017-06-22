@@ -196,7 +196,7 @@ namespace XamarinEvolve.Clients.UI
         protected async void ConnectivityChanged (object sender, ConnectivityChangedEventArgs e)
         {
             //save current state and then set it
-            var connected = Plugin.Settings.CrossSettings.Current.IsConnected;
+            var connected = Settings.Current.IsConnected;
             Settings.Current.IsConnected = e.IsConnected;
             if (connected && !e.IsConnected)
             {

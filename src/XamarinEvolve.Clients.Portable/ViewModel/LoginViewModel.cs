@@ -163,7 +163,7 @@ namespace XamarinEvolve.Clients.Portable
                             G=53,
                             B=235
                         },
-                    UseSafairReaderMode = false,
+                    UseSafariReaderMode = true,
                     UseSafariWebViewController = true
                 });
         }
@@ -202,7 +202,7 @@ namespace XamarinEvolve.Clients.Portable
 
         async Task Finish()
         {
-            if(Device.OS == TargetPlatform.iOS && Settings.FirstRun)
+            if(Device.RuntimePlatform == Device.iOS && Settings.FirstRun)
             {
 
                 #if ENABLE_TEST_CLOUD

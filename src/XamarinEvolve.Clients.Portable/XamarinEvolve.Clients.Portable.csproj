@@ -6,13 +6,29 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Services\AzureDataStore.cs" />
+    <Compile Remove="Services\OfflineDataStore.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="app.config" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Properties\" />
   </ItemGroup>
-
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DefineConstants>TRACE;DEBUG;NETSTANDARD1_6;MOBILE;</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DefineConstants>NETSTANDARD1_6;MOBILE;</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'UITest|iPhone' ">
+    <DefineConstants>NETSTANDARD1_6;MOBILE;</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'UITest|AnyCPU' ">
+    <DefineConstants>NETSTANDARD1_6;MOBILE;ENABLE_TEST_CLOUD</DefineConstants>
+  </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="CClarke.Plugin.Calendars" Version="0.6.33-beta" />
     <PackageReference Include="FormsToolkit" Version="1.1.18" />
@@ -40,6 +56,7 @@
     <ProjectReference Include="..\XamarinEvolve.DataStore.Abstractions\XamarinEvolve.DataStore.Abstractions.csproj" />
     <ProjectReference Include="..\XamarinEvolve.DataStore.Azure\XamarinEvolve.DataStore.Azure.csproj" />
     <ProjectReference Include="..\XamarinEvolve.DataStore.Mock\XamarinEvolve.DataStore.Mock.csproj" />
+    <ProjectReference Include="..\XamarinEvolve.Utils\XamarinEvolve.Utils.csproj" />
   </ItemGroup>
 
 </Project>
